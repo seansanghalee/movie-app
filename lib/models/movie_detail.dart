@@ -6,8 +6,9 @@ class MovieDetail {
   final String posterPath;
   final String releaseDate;
   final int runtime;
-  final List<Map<String, dynamic>> genres;
+  final List<dynamic> genres;
   final double voteAverage;
+  final int voteCount;
 
   MovieDetail({
     required this.id,
@@ -19,16 +20,18 @@ class MovieDetail {
     required this.runtime,
     required this.genres,
     required this.voteAverage,
+    required this.voteCount,
   });
 
   MovieDetail.fromJson(Map<String, dynamic> json)
       : id = json["id"],
-        imdbId = json["imdbId"],
+        imdbId = json["imdb_id"],
         title = json["title"],
         overview = json["overview"],
-        posterPath = json["posterPath"],
-        releaseDate = json["releaseDate"],
+        posterPath = json["poster_path"],
+        releaseDate = json["release_date"],
         runtime = json["runtime"],
         genres = json["genres"],
-        voteAverage = json["voteAverage"];
+        voteAverage = json["vote_average"],
+        voteCount = json["vote_count"];
 }
